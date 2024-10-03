@@ -1,0 +1,7 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:29092
+    properties:
+      auto.register.schemas: true
+    consumer:
+      group-id: favourite-numbers-consumer

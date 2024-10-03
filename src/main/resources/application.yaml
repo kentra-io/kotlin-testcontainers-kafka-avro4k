@@ -1,0 +1,16 @@
+kafka:
+  topics:
+    favourite-numbers: favourite-numbers
+spring:
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: com.github.thake.kafka.avro4k.serializer.KafkaAvro4kSerializer
+    consumer:
+      group-id: favourite-numbers-consumer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: com.github.thake.kafka.avro4k.serializer.KafkaAvro4kDeserializer
+      properties:
+        spring.json.trusted.packages: ai.kognize.streaming.testcontainers.*
+    properties:
+      record.packages: ai.kognize.streaming.testcontainers.port.out
